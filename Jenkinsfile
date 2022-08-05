@@ -31,6 +31,7 @@ pipeline{
             input {
                 message "should we continue"
                 ok "yes we should"
+            }
             steps{
                 // deploy on container -> plugin
                 deploy adapters: [tomcat9(credentialsId: 'ashoktomcatprod', path: '', url: 'http://18.140.130.83')], contextPath: '/app', war: '**/*.war'
